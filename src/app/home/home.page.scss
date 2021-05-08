@@ -1,27 +1,34 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content.background {
+  --background: url(../../assets/image/fundo2.png) 0 0/100% 100% no-repeat
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.button.button-custom:hover,
+.button.button-custom:active {
+  color: #fff;
+  background-color: var(--ion-color-contrast);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.btn {
+  --color: #fff;
+  --width: 100%;
+  --vertical-align: left;
+  --padding-start: 0px;
+  --padding-end: 2px;
+  --paddin-bottom: 0px !important;
+  --border-radius: 0px;
 }
 
-#container a {
-  text-decoration: none;
+.vertical {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  align-items: center;
+  line-height: 30px;
+  color: #ffff
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

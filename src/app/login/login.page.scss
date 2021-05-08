@@ -1,0 +1,65 @@
+:host {
+  --page-margin: 40;
+  --page-background: var(--app-background-shade);
+}
+
+
+
+.bg-image {
+  --background: url('../../assets/image/fundologin.png') 100% 100%/100% 100% no-repeat;
+}
+
+#container {
+  text-align: center;
+  padding: 100% 5px;
+  font-size: 18px;
+  color: white
+}
+
+img {
+  border: 0px solid #ddd;
+  border-radius: 0px;
+  padding: 0px;
+  display: block;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+.login-content {
+
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --padding-top: 50px;
+  --padding-bottom: var(--page-margin);
+
+
+
+  .inputs-list {
+    --ion-item-background: #01001B;
+
+    .input-item {
+      --padding-start: 0px;
+      --padding-end: 0px;
+      --inner-padding-end: 0px;
+      --color: white;
+    }
+
+    .error-container {
+      .error-message {
+        margin: 20px;
+        color: var(--ion-color-danger);
+        font-size: 14px;
+
+        ion-icon {
+          padding-inline-end: calc(var(--page-margin) / 2);
+        }
+      }
+    }
+  }
+
+  .login-btn {
+    margin: 80px;
+  }
+}
