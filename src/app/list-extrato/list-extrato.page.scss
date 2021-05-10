@@ -4,28 +4,30 @@ ion-content{
   --ion-color: #000000;
 }
 
-ion-grid {
-  --ion-grid-column-padding: 10px;
-  border-collapse: collapse;
-  border-style: hidden;
-  color: black;
-
-  ion-row :first-child {
+table.mat-table{
+  display: table;
+  width: 100%;
+  th {
     background-color: #BF9C34;
+    color: black;
     font-weight: bold;
+    font-size: medium;
+    align-items: center;
   }
 
-  ion-col {
-    border: 1px solid black;
-    border-bottom: 0;
-    border-right: 0;
+  td, th {
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 15px;
   }
 
-  ion-col :last-child {
-    border-right: 1px solid black;
-  }
-  ion-row :last-child{
-    border-bottom: 1px solid black;
+  td {
+    font-size: small;
+    background-color: #FFDA43;
   }
 
+  .hideMe{
+    display:none;
+  }
 }
+

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProvidersService } from '../services/providers.service';
 import { DatePipe } from '@angular/common';
 
+
 @Component({
   selector: 'app-list-extrato',
   templateUrl: './list-extrato.page.html',
@@ -9,7 +10,8 @@ import { DatePipe } from '@angular/common';
   providers:[DatePipe]
 })
 export class ListExtratoPage implements OnInit {
- extrato: [];
+  displayedColumns = ['endereco', 'entrada', 'saida', 'valor', 'acao'];
+  extrato: [];
   constructor(private getServices: ProvidersService) { }
 
   ngOnInit() {
@@ -23,6 +25,10 @@ export class ListExtratoPage implements OnInit {
    // eslint-disable-next-line eqeqeq
    this.extrato =  res.filter(dados => dados.iduser == userid);
     });
+  }
+
+  onRowClicked(row){
+    console.log('o que veio', row);
   }
 
 }

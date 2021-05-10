@@ -7,9 +7,11 @@ import { IonicModule } from '@ionic/angular';
 import { ListExtratoPageRoutingModule } from './list-extrato-routing.module';
 
 import { ListExtratoPage } from './list-extrato.page';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
+    MatTableModule,
     CommonModule,
     FormsModule,
     IonicModule,

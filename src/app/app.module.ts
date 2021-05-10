@@ -10,11 +10,22 @@ import { ProvidersService } from './services/providers.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import {Brightness} from '@ionic-native/brightness/ngx';
 import { AuthGuard } from './guard/auth.guard';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, HttpClientModule,  IonicModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatNativeDateModule,
+    MatTableModule
+  ],
   providers: [
     ProvidersService,
     HttpClient,
