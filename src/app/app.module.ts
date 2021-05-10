@@ -13,6 +13,8 @@ import { AuthGuard } from './guard/auth.guard';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +33,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     HttpClient,
     Brightness,
     AuthGuard,
+    NativeGeocoder,
+    Geolocation,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
