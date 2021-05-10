@@ -3,6 +3,7 @@ import { Validators, FormGroup, FormBuilder,  FormControl } from '@angular/forms
 import {  NavController} from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ProvidersService} from '../services/providers.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,8 @@ errorMessage: string;
 
   constructor(
     public router: Router,
-    public providersService: ProvidersService
+    public providersService: ProvidersService,
+    public toastController: ToastController
    ) {
 
     this.loginForm = new FormGroup({
@@ -50,15 +52,22 @@ errorMessage: string;
 
   }
 
+  async mensagem() {
+  const toast = await this.toastController.create({
+    message: 'CPF ou Senha incorretos',
+    duration: 2000
+  });
+  toast.present();
+  }
+
   doLogin(values: any) {
      // eslint-disable-next-line eqeqeq
      const cpf = values.cpf;
      const password = values.password;
 
      this.providersService.login().subscribe(data => {
-          console.log('data', data);
+
           this.users = data.find(x => x.cpf === cpf && x.password === password);
-          console.log('users', this.users);
           if(this.users){
               const f = {
                 nome: this.users.name,
@@ -68,6 +77,8 @@ errorMessage: string;
             localStorage.setItem('token', this.users.apiToken);
             localStorage.setItem('userid', this.users.userid);
             this.router.navigate(['home']);
+          }else {
+             this.mensagem();
           }
 
      });

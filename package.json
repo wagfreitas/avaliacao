@@ -37,6 +37,7 @@
     "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-nativegeocoder": "^3.4.1",
     "rxjs": "~6.6.0",
+    "sweetalert2": "^10.16.7",
     "tslib": "^2.0.0",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "^5.0.5",
     "zone.js": "~0.10.2"

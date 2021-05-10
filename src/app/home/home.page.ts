@@ -21,9 +21,6 @@ export class HomePage implements OnInit{
     }
 
   ngOnInit(){
-    this.getServices.getExtrato().subscribe(res => {
-      console.log(res);
-    });
     this.setBrightness();
     this.getBrightness();
   }
