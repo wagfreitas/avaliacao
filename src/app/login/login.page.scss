@@ -1,19 +1,13 @@
-:host {
-  --page-margin: 40;
-  --page-background: var(--app-background-shade);
-}
 
-
-
-.bg-image {
-  --background: url('../../assets/image/fundologin.png') 100% 100%/100% 100% no-repeat;
+ion-content{
+  --background: url('../../assets/image/fundopreto.png') 0 0/100% 100% no-repeat
 }
 
 #container {
-  text-align: center;
-  padding: 100% 5px;
-  font-size: 18px;
-  color: white
+  position: fixed;
+  bottom: 70px;
+  width: 100%;
+
 }
 
 img {

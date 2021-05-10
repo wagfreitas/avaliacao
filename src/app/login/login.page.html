@@ -1,11 +1,11 @@
-<ion-content class="bg-image login-content getsstart ion-padding">
+<ion-content>
 <div id= "container">
     <form [formGroup]="loginForm"(ngSubmit)="doLogin(loginForm.value)">
-        <ion-list class="inputs-list" lines="full">
-            <ion-item class="input-item">
-                <ion-input type="number" placeholder="Cpf" formControlName="cpf" max = "11"></ion-input>
+        <ion-list >
+            <ion-item >
+                <ion-input type="number" placeholder="CPF" formControlName="cpf" max = "11"></ion-input>
             </ion-item>
-            <div class="error-container">
+            <div >
                 <ng-container *ngFor="let validation of validationMessages.cpf">
                     <div class="error-message" *ngIf="loginForm.get('cpf').hasError(validation.type) && (loginForm.get('cpf').dirty || loginForm.get('cpf').touched)">
                         <ion-icon name="information-circle-outline"></ion-icon>
@@ -14,12 +14,12 @@
                 </ng-container>
             </div>
 
-            <ion-item class="input-item">
+            <ion-item >
                 <app-show-hide-password>
                     <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
                 </app-show-hide-password>
             </ion-item>
-            <div class="error-container">
+            <div >
                 <ng-container *ngFor="let validation of validationMessages.password">
                     <div class="error-message" *ngIf="loginForm.get('password').hasError(validation.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
                         <ion-icon name="information-circle-outline"></ion-icon>
@@ -32,7 +32,7 @@
         <ion-button class="login-btn" type="submit" expand="block" [disabled]="!loginForm.valid">Entrar</ion-button>
         <ion-row class="other-auth-options-row">
 
-            <div id="container">
+            <div >
                 <p>{{errorMessage}}</p>
             </div>
         </ion-row>

@@ -14,7 +14,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
-import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { LaunchNavigator } from '@ionic-native/launch-navigator/ngx';
+import { Geolocation } from '@ionic-native/Geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,12 +30,13 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     MatTableModule
   ],
   providers: [
+    Geolocation,
     ProvidersService,
     HttpClient,
     Brightness,
     AuthGuard,
     NativeGeocoder,
-    Geolocation,
+    LaunchNavigator,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-  value  = 0.5;
+  valueMax  = 1;
+  valueCur = 0.5;
   atualVal: number;
   extrato: Array<any> =  [];
   constructor(private getServices: ProvidersService,
@@ -24,20 +25,31 @@ export class HomePage implements OnInit{
       console.log(res);
     });
     this.setBrightness();
+    this.getBrightness();
   }
 
   setBrightness(){
-    this.bright.setBrightness(this.value);
+    this.bright.setBrightness(this.valueMax);
+  }
+
+  currentBrightness(){
+    this.bright.setBrightness(this.valueCur);
   }
 
   getBrightness(){
    this.bright.getBrightness().then(val =>{
        this.atualVal = val;
+       console.log('brilho atual', val);
     });
+  }
+
+  logOut(){
+    localStorage.removeItem('token');
   }
 
 
   goToList(){
+    this.currentBrightness();
     this.router.navigate(['extrato']);
   }
 }

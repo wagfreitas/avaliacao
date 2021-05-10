@@ -1,11 +1,12 @@
-<ion-header [translucent]= "true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Extrato de Conta
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text= "Extrato"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<div classe= "center" ><h3>Clique no Icone para localização do estacionamento</h3>
+</div>
 <ion-content>
 <table mat-table [dataSource]= "extrato" class="mat-elevation-z8">
   <ng-container matColumnDef = "endereco">
@@ -14,13 +15,13 @@
   </ng-container>
 
   <ng-container matColumnDef = "entrada">
-    <th mat-header-cell *matHeaderCellDef> Entrada</th>
+    <th  mat-header-cell *matHeaderCellDef> Entrada</th>
     <td mat-cell *matCellDef= "let element"> {{ element.dataEntrada | date: 'dd/MM/yy h:mm'}} </td>
   </ng-container>
 
   <ng-container matColumnDef = "saida">
-    <th mat-header-cell *matHeaderCellDef> Saida</th>
-    <td mat-cell *matCellDef= "let element"> {{ element.dataSaida | date: 'dd/MM/yy h:mm'}} </td>
+    <th  mat-header-cell *matHeaderCellDef> Saida</th>
+    <td  mat-cell *matCellDef= "let element"> {{ element.dataSaida | date: 'dd/MM/yy h:mm'}} </td>
   </ng-container>
 
   <ng-container matColumnDef = "valor">

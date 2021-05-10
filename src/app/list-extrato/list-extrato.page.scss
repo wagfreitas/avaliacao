@@ -4,30 +4,46 @@ ion-content{
   --ion-color: #000000;
 }
 
+.center{
+  position: absolute;
+  margin-top: 10px;
+  text-align: center;
+
+}
+
+
+
 table.mat-table{
   display: table;
   width: 100%;
-  th {
-    background-color: #BF9C34;
-    color: black;
-    font-weight: bold;
-    font-size: medium;
-    align-items: center;
-  }
 
-  td, th {
+
+  td {
     white-space: normal;
     word-wrap: break-word;
-    max-width: 15px;
   }
+  th {
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  th:nth-child(2) {
+    width: 20%;
+  }
+    th:nth-child(3) {
+      width: 20%;
+    }
 
   td {
     font-size: small;
     background-color: #FFDA43;
   }
-
-  .hideMe{
-    display:none;
+  th {
+    background-color: #BF9C34;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
   }
+
 }
 
