@@ -1,9 +1,26 @@
-<ion-content padding class="background">
-  <div class="footer">
-  <ion-button fill="solid" expand="block" size="large" color= "button" class="btn">
-    <div class="vertical">
-      <span>Ver Extrato</span>
-    </div>
-  </ion-button>
-  </div>
+<ion-header [translucent]= "true">
+  <ion-toolbar>
+    <ion-title>
+      Extrato de Conta
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>Endereco</ion-col>
+      <ion-col>Entrada</ion-col>
+      <ion-col>Saida</ion-col>
+      <ion-col>Valor</ion-col>
+    </ion-row>
+     <ion-row *ngFor="let item of extrato" >
+      <ion-col>{{item.garagem}} </ion-col>
+      <ion-col>{{item.dataEntrada | date: 'dd/MM/yy h:mm'}} </ion-col>
+      <ion-col>{{item.dataSaida | date: 'dd/MM/yy h:mm'}} </ion-col>
+      <ion-col>{{item.valor}} </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

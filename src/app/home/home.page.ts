@@ -1,22 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProvidersService } from '../services/providers.service';
+import { Brightness } from '@ionic-native/brightness/ngx';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
-  bright = 0.42;
+export class HomePage implements OnInit{
+  value  = 0.5;
+  atualVal: number;
   extrato: Array<any> =  [];
-  constructor(private getServices: ProvidersService) {
-
+  constructor(private getServices: ProvidersService,
+    private bright: Brightness,
+    private router: Router) {
+      this.getBrightness();
     }
 
-  goToList(){
+  ngOnInit(){
     this.getServices.getExtrato().subscribe(res => {
-      this.extrato = res;
-      console.log('aqui', res);
+      console.log(res);
     });
+    this.setBrightness();
+  }
+
+  setBrightness(){
+    this.bright.setBrightness(this.value);
+  }
+
+  getBrightness(){
+   this.bright.getBrightness().then(val =>{
+       this.atualVal = val;
+    });
+  }
+
+
+  goToList(){
+    this.router.navigate(['extrato']);
   }
 }

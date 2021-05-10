@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder,  FormControl } from '@angular/forms';
 import {  NavController} from '@ionic/angular';
 import { Router } from '@angular/router';
-import { ProvidersService } from '../services/providers.service';
+import { ProvidersService} from '../services/providers.service';
 
 @Component({
   selector: 'app-login',
@@ -55,7 +55,7 @@ errorMessage: string;
      const cpf = values.cpf;
      const password = values.password;
 
-     this.providersService.getToken().subscribe(data => {
+     this.providersService.login().subscribe(data => {
           console.log('data', data);
           this.users = data.find(x => x.cpf === cpf && x.password === password);
           console.log('users', this.users);
@@ -66,6 +66,7 @@ errorMessage: string;
               };
               console.log('retorno',f);
             localStorage.setItem('token', this.users.apiToken);
+            localStorage.setItem('userid', this.users.userid);
             this.router.navigate(['home']);
           }
 
